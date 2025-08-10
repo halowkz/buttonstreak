@@ -1,4 +1,4 @@
-html, * {
+html, * 
   box-sizing: border-box;
   font-family: 'Inter', sans-serif;
 }
@@ -29,5 +29,6 @@ body {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
-  z-index: 10; /* garante que o botão fique acima de outros elementos */
+  z-index: 10;
+
 }
