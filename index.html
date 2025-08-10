@@ -13,16 +13,12 @@
     <p class="lead">use full screen (song: Chopin - Nocturne op.9 No.2)</p>
   </div>
 
-  <!-- oneko.js (gatinho perseguidor) -->
   <script src="oneko.js"></script>
-  <!-- script do botão -->
   <script src="script.js"></script>
-
-  <!-- 🎵 Música de fundo após interação -->
 <script>
   const audio = new Audio('musica.mp3');
   audio.loop = true;
-  audio.volume = 0.5; // volume entre 0 e 1
+  audio.volume = 0.5;
 
   document.addEventListener('click', () => {
     audio.play().then(() => {
@@ -30,8 +26,9 @@
     }).catch((err) => {
       console.error("Erro ao tocar a música:", err);
     });
-  }, { once: true }); // só executa uma vez
+  }, { once: true });
 </script>
 </body>
 
 </html>
+
