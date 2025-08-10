@@ -1,0 +1,36 @@
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>button streak</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>you clicked <span id="contador">0</span> times.</h1>
+    <button id="botao" onclick="moverBotao(event)">cool button</button>
+    <p class="lead">use full screen (song: Chopin - Nocturne op.9 No.2)</p>
+  </div>
+
+  <!-- oneko.js (gatinho perseguidor) -->
+  <script src="oneko.js"></script>
+  <!-- script do botão -->
+  <script src="script.js"></script>
+
+  <!-- 🎵 Música de fundo após interação -->
+<script>
+  const audio = new Audio('musica.mp3');
+  audio.loop = true;
+  audio.volume = 0.5; // volume entre 0 e 1
+
+  document.addEventListener('click', () => {
+    audio.play().then(() => {
+      console.log("Música começou a tocar.");
+    }).catch((err) => {
+      console.error("Erro ao tocar a música:", err);
+    });
+  }, { once: true }); // só executa uma vez
+</script>
+</body>
+</html>
