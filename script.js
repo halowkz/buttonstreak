@@ -26,13 +26,11 @@ function moverBotao(event) {
   const larguraBotao = botao.offsetWidth;
   const alturaBotao = botao.offsetHeight;
 
-  // Limites da área permitida
   const limiteEsquerda = 100;
   const limiteTopo = 100;
   const limiteDireita = larguraJanela - larguraBotao - 100;
   const limiteInferior = alturaJanela - alturaBotao - 100;
 
-  // Gerar posição aleatória dentro dos limites
   const novaEsquerda = Math.random() * (limiteDireita - limiteEsquerda) + limiteEsquerda;
   const novoTopo = Math.random() * (limiteInferior - limiteTopo) + limiteTopo;
 
@@ -40,7 +38,6 @@ function moverBotao(event) {
   botao.style.top = `${novoTopo}px`;
 }
 
-// Clique no fundo da página
 document.body.addEventListener("click", function () {
   contador = 0;
   contadorEl.textContent = contador;
@@ -57,4 +54,5 @@ window.onload = () => {
 
   botao.style.left = `${centroEsquerda}px`;
   botao.style.top = `${centroTopo}px`;
+
 };
